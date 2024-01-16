@@ -118,6 +118,13 @@ function downloadContent() {
   element.click();
 }
 
+//Keyboard
+function insertCharacter(character) {
+  document.getElementById('textarea1').value += character;
+  document.getElementById('textarea2').value += character;
+  document.getElementById('textarea3').value += character;
+}
+
 
 
 // Sélectionne les premiers textareas

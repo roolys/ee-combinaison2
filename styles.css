@@ -48,9 +48,9 @@ body {
 
   .timer {
     text-align: right;
-    margin-top: 30%;
-    position: absolute;
-    top: 30%;
+    /* margin-top: 30%; */
+    position: fixed;
+    top: 50%;
     right: 2%;
   }
   .timer p {
@@ -58,7 +58,40 @@ body {
     font-weight: bold;
     color: #888;
   }
+  /*     */
   
+  #keyboard {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 205px; /* Ajustez la largeur selon vos besoins */
+  }
+
+  .key {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .key:hover {
+    background-color: #eee;
+  }
+
+  .virtual-keyboard {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    width: 200px; /* Ajustez la largeur selon vos besoins */
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /*   */
   
   @media (max-width: 600px) {
     .text-area textarea {
