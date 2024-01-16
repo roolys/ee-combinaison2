@@ -102,4 +102,10 @@ body {
         text-align: center;
         margin-top: 20px;
       }
+      #keyboard {
+        width: 100%;
+    }
+    .virtual-keyboard {
+        width: 100%;
+    }
   }
