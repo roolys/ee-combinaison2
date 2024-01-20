@@ -117,15 +117,40 @@ function downloadContent() {
   document.body.appendChild(element);
   element.click();
 }
+//KeyBoard
 
-//Keyboard
 function insertCharacter(character) {
-  document.getElementById('textarea1').value += character;
-  document.getElementById('textarea2').value += character;
-  document.getElementById('textarea3').value += character;
+  // Récupère l'élément textarea actif
+  const activeTextarea = document.querySelector('.text-area.active textarea');
+  
+  if (activeTextarea) {
+    // Ajoute le caractère au textarea actif
+    activeTextarea.value += character;
+
+    // Ajoute le focus au textarea actif
+    activeTextarea.focus();
+  }
 }
 
+// Ajoute un gestionnaire d'événements aux textareas pour les marquer comme actifs au clic
+document.querySelectorAll('.text-area textarea').forEach(textarea => {
+  textarea.addEventListener('click', function() {
+    // Retire la classe 'active' de tous les textareas
+    document.querySelectorAll('.text-area').forEach(textAreaContainer => {
+      textAreaContainer.classList.remove('active');
+    });
 
+    // Ajoute la classe 'active' à la div parent du textarea actuel
+    this.closest('.text-area').classList.add('active');
+    
+    // Ajoute le focus au textarea actuel
+    this.focus();
+  });
+});
+
+
+
+//End KeyBoard
 
 // Sélectionne les premiers textareas
 const firstTextarea = document.querySelector('#textarea1');
